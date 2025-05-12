@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Book View</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+  <button id="toggle-theme">Dark Mode</button>
+    <ul class="items">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="bookshelf.html" class="active">Bookshelf</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+    </ul>
+</nav>
+
+
+<main>
+
+    <section class="book-content">
+      <h1 id="book-title">Romeo and Juliet</h1>
+
+      <div class="reader-wrapper">
+        <button id="prev-btn" class="nav-btn">Back</button>
+        
+        <div id="book-text" class="reader"></div>
+        <button id="next-btn" class="nav-btn">Next</button>
+      </div>
+
+      <div class="reader-toolbar">
+        <button onclick="highlightSelectedWord()">Highlight</button>
+
+
+      </div>
+
+        <button id="cast-btn">View Cast</button>
+        <div id="cast-popup" class="popup hidden">
+            <h2>Cast</h2>
+            <ul>
+                <li>Romeo -</li>
+                <li>Juliet -</li>
+                <li>Tybalt -</li>
+            </ul>
+            <button onclick="closeCast()">Close</button>
+        </div>
+    </section>
+    <section class="tab-section">
+        <div class="tabs">
+          <button class="tab active" onclick="openTab('locations')">Locations</button>
+          <button class="tab" onclick="openTab('themes')">Themes</button>
+          <button class="tab" onclick="openTab('cast')">Cast</button>
+          <button class="tab" onclick="openTab('summaries')">Summaries</button>
+        </div>
+  
+        <div class="tab-content" id="locations">Verona, Mantua, Capulet's house...</div>
+        <div class="tab-content hidden" id="themes">Love, fate, conflict, family honour...</div>
+        <div class="tab-content hidden" id="cast">Romeo, Juliet, Mercutio, Tybalt...</div>
+        <div class="tab-content hidden" id="summaries">
+          <h3>Chapter 1</h3>
+          <p>Romeo is heartbroken over Rosaline...</p>
+          <h3>Chapter 2</h3>
+          <p>Romeo meets Juliet at the Capulet's party...</p>
+        </div>
+      </section>
+    </main>
+  
+    <div id="dictionary-popup" class="popup hidden">
+      <h3>Definition</h3>
+      <p id="definition-text">Click a word to look it up!</p>
+      <button id="close-dict">Close</button>
+    </div>
+    <script src="book.js"></script>
+    <script src="shared.js"></script>
+
+ </body>
+  </html>
